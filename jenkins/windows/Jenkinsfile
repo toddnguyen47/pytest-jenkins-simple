@@ -1,0 +1,35 @@
+pipeline {
+  agent any
+
+  environment {
+    PATH = "C:/WINDOWS/SYSTEM32;C:/Users/i1A771792/opt/python-3.7.6"
+  }
+
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building..'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Testing..'
+        bat """
+        python3w -m pipenv install
+        python3w -m pipenv run "jenkins\\scripts\\tests.bat"
+        """
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying....'
+      }
+    }
+  }
+
+  post {
+    always {
+      junit "reports/*.xml"
+    }
+  }
+}
