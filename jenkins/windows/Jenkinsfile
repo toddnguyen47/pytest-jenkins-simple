@@ -16,7 +16,7 @@ pipeline {
         echo 'Testing..'
         bat """
         python3w -m pipenv install
-        python3w -m pipenv run "jenkins\\scripts\\tests.bat"
+        python3w -m pipenv run "jenkins\\windows\\tests.bat"
         """
       }
     }
