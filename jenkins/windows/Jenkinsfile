@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    PATH = "C:/WINDOWS/SYSTEM32;C:/Users/i1A771792/opt/python-3.7.6"
+    PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Users\\i1A771792\\opt\\python3.8.5"
   }
 
   stages {
@@ -15,8 +15,9 @@ pipeline {
       steps {
         echo 'Testing..'
         bat """
-        python3w -m pipenv install
-        python3w -m pipenv run "jenkins\\windows\\tests.bat"
+        python -m pip install --upgrade pipenv
+        python -m pipenv install
+        python -m pipenv run "jenkins\\windows\\tests.bat"
         """
       }
     }
