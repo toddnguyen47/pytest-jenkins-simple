@@ -32,3 +32,6 @@ class TestAddByMult:
 
     def test_neg_two_neg_three(self, add_by_mult):
         assert add_by_mult.add(-2, -3) == 6
+
+    def test_get_one_should_return_one(self, add_by_mult):
+        assert add_by_mult.get_one() == 1
