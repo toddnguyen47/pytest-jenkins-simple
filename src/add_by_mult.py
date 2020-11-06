@@ -14,5 +14,5 @@ class AddByMult:
 
         return sum1
 
-    def get_one(self):
-        return 1
+    def get_two(self):
+        return 2
