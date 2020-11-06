@@ -13,3 +13,6 @@ class AddByMult:
             sum1 = -sum1
 
         return sum1
+
+    def get_two(self):
+        return 2
