@@ -15,4 +15,5 @@ class AddByMult:
         return sum1
 
     def get_two(self):
+        print("Getting two in master branch")
         return 2
