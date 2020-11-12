@@ -15,4 +15,5 @@ class AddByMult:
         return sum1
 
     def get_two(self):
+        print("In branch now")
         return 2
