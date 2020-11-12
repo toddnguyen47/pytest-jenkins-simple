@@ -16,4 +16,5 @@ class AddByMult:
 
     def get_two(self):
         print("Getting two in master branch")
+        print("In branch now")
         return 2
