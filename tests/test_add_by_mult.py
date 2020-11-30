@@ -35,3 +35,6 @@ class TestAddByMult:
 
     def test_get_two_should_return_two(self, add_by_mult):
         assert add_by_mult.get_two() == 2
+
+    def test_should_fail(self, add_by_mult):
+        assert add_by_mult.get_two() == 3
