@@ -10,3 +10,7 @@ jobs:
           command: |
             pip install pipenv
             pipenv install
+      - run:
+          name: PyTest
+          command: |
+            pytest
