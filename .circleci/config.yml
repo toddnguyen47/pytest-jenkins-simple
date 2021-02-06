@@ -2,16 +2,11 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: circleci/python:stretch
     steps:
       - checkout
       - run:
-          name: The First Step
+          name: Install pipenv
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-      - run:
-          name: Code Has Arrived
-          command: |
-            ls -al
-            echo '^^^That should look familiar^^^'
+            pip install pipenv
+            pipenv install
