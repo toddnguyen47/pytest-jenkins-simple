@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/python:stretch
+      - image: circleci/python:3.8.7
     steps:
       - checkout
       - run:
@@ -10,6 +10,14 @@ jobs:
           command: |
             pip install pipenv
             pipenv install
+            ls -al
+      # https://circleci.com/docs/2.0/language-python/#cache-dependencies
+      - save_cache:
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - ".venv"
+            - "/usr/local/bin"
+            - "/usr/local/lib/python3.8/site-packages"
       - run:
           name: PyTest
           command: |
